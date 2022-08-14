@@ -4,6 +4,7 @@
 
 .App {
   text-align: center;
+  background-color: #333;
 }
 
 .App-logo {
@@ -45,11 +46,16 @@
   display: grid;
   grid-gap:0;
   grid-template-columns: 350px 350px 350px;
-  margin: 2vh auto;
   justify-content: center;
   padding: 2vh 2vw;
-  
+  margin: 4vh 2vw;
+  background-color: beige;
 }
+
+.ant-col {
+  padding-bottom: 5vh;
+}
+
 .list-3col p {
   text-align: left;
 }
@@ -68,11 +74,10 @@
 
 form.addfood, .search-bar {
   width: 350px;
-  margin-top: 3vh;
-
+  margin: 3vh auto;
 }
 
-.addfood label {
+label {
   font-size: 16px;
   font-weight: 600;
   padding: 2vh 1vw;
@@ -82,13 +87,19 @@ form.addfood, .search-bar {
   margin-top: 3vh;
   width: 100%;
   height: 40px;
-  background-color: #61dafb;
   border: none;
   font-weight: 600;
+  color: #fff;
+  border-color: #1890ff;
+  background: #1890ff;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
 
 .addfood button:hover {
   background-color: greenyellow;
+  border-color: #1890ff;
+  color: #333
 }
 
 .add-search-st {
@@ -96,4 +107,30 @@ form.addfood, .search-bar {
   grid-gap: 0;
   grid-template-columns: 450px 450px;
   justify-content: center;
+  background-color: beige;
+  padding: 1vh 1vw 4vh;
+}
+.title-sct {
+  background-color: #333;
+  padding: 1vh 1vw;
+}
+
+h1 {
+  color: beige !important;
+  font-weight: 700 !important;
+}
+
+h3 {
+  color:white !important;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.no-result {
+  margin: 4vh auto;
+  padding: 6vh 2vh;
+}
+
+.no-result img {
+  width: 600px;
 }

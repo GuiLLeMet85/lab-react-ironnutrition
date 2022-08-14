@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { Divider, Input } from 'antd';
+import { Input } from 'antd';
 
-// Iteration 4
 function AddFoodForm(props) {
 
         const {newFood} = props
@@ -10,7 +9,7 @@ function AddFoodForm(props) {
             name: '',
             image: '',
             calories: '',
-            servings: '',
+            servings: ''
         })
 
         const handleChange = (e) => {
@@ -54,8 +53,6 @@ function AddFoodForm(props) {
 
     return (
       <form onSubmit={handleForm} className="addfood">
-        <Divider>Add Food Entry</Divider>
-  
         <label>Name</label>
         <Input value={food.name} name = "name" placeholder="Food name" type="text" onChange={(e) => handleChange(e)} />
   

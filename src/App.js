@@ -4,9 +4,11 @@ import foodData from './foods.json';
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
 import Search from './components/Search';
+import {Divider} from 'antd';
 
 function App() {
   const [foods, setFood] = useState(foodData)
+  const [showForm, setShowForm] = useState (true)
 
 
   const handleDelete = (name) => {
@@ -37,15 +39,38 @@ function App() {
   return (
    
     <div className="App">
-  
-    <h1>Food list</h1> 
+      <div className='title-sct'> 
+        <h1>Food list</h1> 
+      </div>
       <div className='add-search-st'>
-        <AddFoodForm newFood = {handleNewFood} />
-        <Search onSearch = {handleSearch} />
+        <div className='center-divider'>
+          <Divider>Add Food Entry</Divider>   
+          {showForm && <AddFoodForm newFood = {handleNewFood} />}
+          <button className="hide-form-bt" onClick={() => setShowForm(prev => !prev)}>{!showForm ? "▽" : "▲"}</button>
+        </div>
+        <div className='center-divider'>
+          <Divider>Search Food</Divider>  
+          <Search onSearch = {handleSearch} />
+        </div>
+
       </div>  
-        <FoodBox onDelete = {handleDelete} food = {foods} />
+  
+             {foods.length > 0 ? (
+                  foods.map((food) => {
+                    return (
+                      <FoodBox key={food.name} onDelete = {handleDelete} food = {foods} />
+                    );
+                  })
+                ) : (
+                  <div className='no-result'>
+                    <h3>Oops! There is no more content to show </h3>
+                    <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif" alt="empty list" />
+                  </div>
+                )} 
+
     </div>
   )
 } 
 
 export default App;
+
