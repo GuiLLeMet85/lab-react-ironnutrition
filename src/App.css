@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.list-3col {
+  display: grid;
+  grid-gap:0;
+  grid-template-columns: 350px 350px 350px;
+  margin: 2vh auto;
+  justify-content: center;
+  padding: 2vh 2vw;
+  
+}
+.list-3col p {
+  text-align: left;
+}
+
+.list-3col img {
+  margin: 1vh auto;
+}
+
+.list-3col button {
+  left: 0;
+}
+
+.list-3col button:hover {
+  background-color: red;
+}

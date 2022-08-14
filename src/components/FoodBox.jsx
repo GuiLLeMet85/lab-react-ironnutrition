@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Card, Col, Button } from 'antd';
 
 // Iteration 2
@@ -7,7 +6,7 @@ function FoodBox(props) {
     const {food, onDelete} = props
 
   return (
-    <div >
+    <div className='list-3col'>
     {food.map(food => {
         return (
             <Col key={food.name}>
@@ -19,7 +18,7 @@ function FoodBox(props) {
                     <p>Calories: {food.calories}</p>
                     <p>Servings: {food.servings}</p>
                     <p>
-                    <b>Total Calories: </b>{food.calories * food.servings} kcal
+                    <b>Total Calories: {food.calories * food.servings}</b> kcal
                     </p>
                     <Button type="primary" onClick={() => onDelete(food.name)}> Delete </Button>
                 </Card>

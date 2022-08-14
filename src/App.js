@@ -19,7 +19,9 @@ function App() {
     <div className="App">
   
     <h1>Food list</h1>
-          <FoodBox onDelete={handleDelete} food = {foods} />
+       
+    <FoodBox onDelete={handleDelete} food = {foods} />
+     
       </div>
   )
 } 
