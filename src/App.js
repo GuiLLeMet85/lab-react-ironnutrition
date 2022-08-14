@@ -54,23 +54,15 @@ function App() {
         </div>
 
       </div>  
-  
-             {foods.length > 0 ? (
-                  foods.map((food) => {
-                    return (
-                      <FoodBox key={food.name} onDelete = {handleDelete} food = {foods} />
-                    );
-                  })
-                ) : (
-                  <div className='no-result'>
-                    <h3>Oops! There is no more content to show </h3>
-                    <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif" alt="cat dancing" />
-                  </div>
-                )} 
-
+                {foods.length > 0 ? <FoodBox key={foods.name} onDelete = {handleDelete} food = {foods} /> : (
+                    <div className='no-result'>
+                        <h3>Oops! There is no more content to show </h3>
+                        <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif" alt="cat dancing" />
+                    </div>
+                    )
+                }
     </div>
   )
 } 
 
 export default App;
-
