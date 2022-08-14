@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import foodData from './foods.json';
 import FoodBox from './components/FoodBox';
+import AddFoodForm from './components/AddFoodForm';
 
 function App() {
   const [foods, setFood] = useState(foodData)
@@ -13,16 +14,23 @@ function App() {
     setFood(foodToRemove)
   }
 
+  const handleNewFood = (food) => {
+    const updateFoods = [...foods];
+    updateFoods.push(food);
+    setFood(updateFoods);
+  } 
+
+
+
 
   return (
    
     <div className="App">
   
-    <h1>Food list</h1>
-       
-    <FoodBox onDelete={handleDelete} food = {foods} />
-     
-      </div>
+    <h1>Food list</h1> 
+        <AddFoodForm newFood = {handleNewFood} />
+        <FoodBox onDelete = {handleDelete} food = {foods} />
+    </div>
   )
 } 
 
