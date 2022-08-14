@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
 import './App.css';
 import foodData from './foods.json';
+import FoodBox from './components/FoodBox';
 
 function App() {
-  const [food, setFood] = useState(foodData)
+  const [foods, setFood] = useState(foodData)
+
+  const handleDelete = (name) => {
+    const foodToRemove = foods.filter (food =>{
+      return food.name !== (name)
+    }) 
+    setFood(foodToRemove)
+  }
 
 
   return (
@@ -11,16 +19,8 @@ function App() {
     <div className="App">
   
     <h1>Food list</h1>
- 
-    {food.map(food => {
-        return (
-          <div>
-            <p> {food.name} </p>
-            <img src={food.image} alt={food.name} width='150px' />
-          </div>
-         )
-    })}
-     </div>
+          <FoodBox onDelete={handleDelete} food = {foods} />
+      </div>
   )
 } 
 
