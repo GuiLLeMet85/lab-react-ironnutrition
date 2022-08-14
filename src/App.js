@@ -64,7 +64,7 @@ function App() {
                 ) : (
                   <div className='no-result'>
                     <h3>Oops! There is no more content to show </h3>
-                    <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif" alt="empty list" />
+                    <img src="https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif" alt="cat dancing" />
                   </div>
                 )} 
 

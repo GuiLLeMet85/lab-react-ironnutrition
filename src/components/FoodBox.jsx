@@ -2,8 +2,7 @@ import React from "react";
 import { Card, Col, Button } from 'antd';
 
 // Iteration 2
-function FoodBox(props) {
-    const {food, onDelete} = props
+function FoodBox({food, onDelete}) {
 
   return (
     <div className='list-3col'>
