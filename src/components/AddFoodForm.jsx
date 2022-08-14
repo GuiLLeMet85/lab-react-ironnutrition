@@ -4,23 +4,24 @@ import { Divider, Input } from 'antd';
 // Iteration 4
 function AddFoodForm(props) {
 
-    const {newFood} = props
+        const {newFood} = props
 
-    const [food, setFood] = useState({
-        name: '',
-        image: '',
-        calories: '',
-        servings: '',
-      })
+        const [food, setFood] = useState({
+            name: '',
+            image: '',
+            calories: '',
+            servings: '',
+        })
 
-      const handleChange = (e) => {
-        const conditionalValue = e.target.name === 'calories' ? parseInt(e.target.value) : e.target.value;
-        setFood(prev => {
-          return {
-            ...prev,
-            [e.target.name]: conditionalValue
-          }
-        })}
+        const handleChange = (e) => {
+            const conditionalValue = e.target.name === 'calories' ? parseInt(e.target.value) : e.target.value;
+            setFood(prev => {
+                return {
+                    ...prev,
+                    [e.target.name]: conditionalValue
+                }
+            })
+        }
 
         const handleCalories = (e) => {
             setFood(prev => {
@@ -50,7 +51,7 @@ function AddFoodForm(props) {
                 servings: '',
               })
         }
-        
+
     return (
       <form onSubmit={handleForm} className="addfood">
         <Divider>Add Food Entry</Divider>
